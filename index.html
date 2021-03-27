@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>choose stories</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <script src="./js/jquery.js"></script>
+    <style>
+      body{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      }
+      #text{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 20px;
+      }
+      #text span{
+        color: brown;
+        text-decoration: underline;
+      }
+      #session2,#session3{
+        display: none;
+      }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="session1">
+            <h1 class="p-lg-3">please choose one of these stories</h1> 
+            <button type="button" 
+                class="btn btn-outline-primary btn-lg btn-block m-md-2" 
+                index=0
+                onclick="IndexStory(this.getAttribute('index'))"
+            >stroy1</button>
+            <button type="button" class="btn btn-outline-secondary btn-lg btn-block m-md-2" 
+                index=1
+                onclick="IndexStory(this.getAttribute('index'))"
+            >stroy2</button>
+            <button type="button" class="btn btn-outline-success btn-lg btn-block m-md-2" 
+                index=2
+                onclick="IndexStory(this.getAttribute('index'))"
+            >stroy3</button>
+        </div>
+
+        <!-- output: function(adjective,verb1,verb2,pluralNoun1,pluralNoun2,pluralNoun2){
+            return 
+        } -->
+    <div id="session2">
+            <h1 class="p-lg-3">provide the following words</h1> 
+            <form  onsubmit="return false" action=" "  method='post' id="form">
+                <div class="form-group">
+                  <input type="text" 
+                    name="adjective"
+                  class="form-control" id="adjective" required placeholder="adjective">
+                </div>
+                <div class="form-group">
+                    <input type="text" 
+                    name="verb1"
+                    class="form-control" id="verb1" required placeholder="verb1">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" 
+                    name="verb2"
+                    class="form-control" id="verb2" required placeholder="verb2">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" 
+                    name="pluralNoun1"
+                    class="form-control" id="pluralNoun1" required placeholder="pluralNoun1">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" 
+                    name="pluralNoun2"
+                    class="form-control" id="pluralNoun2" required placeholder="pluralNoun2">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" 
+                    name="pluralNoun3"
+                    class="form-control" id="pluralNoun3" required placeholder="pluralNoun3">
+                  </div>
+                <button type="submit"
+                 class="btn btn-primary"
+                 onclick="createStory()"
+                 >Submit</button>
+              </form>
+        </div>
+        <div id="session3">
+          <div class="story">
+            <h2 id="storyTitle"></h2>
+            <div id="text"></div>
+            <button type="button" class="btn btn-outline-success btn-lg btn-block m-md-2" 
+            index=2
+            onclick="createAnther()"
+        >create anther story</button>
+          </div>
+         
+      </div>
+    </div>
+
+
+    <script src="./js/bootstrap.js"></script>
+    <script src="./stories.js"></script>
+</body>
+</html>
